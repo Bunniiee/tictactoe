@@ -59,7 +59,7 @@ interface GameContextValue {
 
 const GameContext = createContext<GameContextValue | null>(null)
 
-const serverUrl = NAKAMA_SERVER_URL.replace('http://', '').replace('https://', '').replace(/:.*$/, '')
+const serverUrl = NAKAMA_SERVER_URL.replace(/\/$/, '').replace('http://', '').replace('https://', '').replace(/:.*$/, '')
 const useSSL = NAKAMA_SERVER_URL.startsWith('https')
 const port = useSSL ? '443' : '7350'
 const client = new Client('defaultkey', serverUrl, port, useSSL)
