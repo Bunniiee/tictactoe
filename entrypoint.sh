@@ -23,5 +23,6 @@ until /nakama/nakama migrate up --database.address "$DB"; do
   sleep 5
 done
 
-echo "Migration complete, starting Nakama..."
-exec /nakama/nakama --config /nakama/data/nakama.yml --database.address "$DB"
+SOCKET_PORT=${PORT:-7350}
+echo "Migration complete, starting Nakama on port $SOCKET_PORT..."
+exec /nakama/nakama --config /nakama/data/nakama.yml --database.address "$DB" --socket.port "$SOCKET_PORT"
