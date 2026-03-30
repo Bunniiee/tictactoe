@@ -1,0 +1,16 @@
+{
+  "name": "nakama-tictactoe",
+  "version": "1.0.0",
+  "description": "Multiplayer Tic-Tac-Toe with Nakama backend",
+  "private": true,
+  "scripts": {
+    "dev:backend": "docker-compose up -d",
+    "dev:frontend": "cd frontend && npm run dev",
+    "build:backend": "cd backend && npm install && npm run build",
+    "build:frontend": "cd frontend && npm install && npm run build",
+    "stop": "docker-compose down",
+    "logs": "docker-compose logs -f",
+    "clean": "docker-compose down -v && rm -rf frontend/dist backend/data/modules/*.js"
+  },
+  "devDependencies": {}
+}

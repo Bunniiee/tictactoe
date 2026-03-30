@@ -1,0 +1,42 @@
+name: nakama-tictactoe
+runtime:
+  js_entrypoint: "index.js"
+
+database:
+  address:
+    - "postgres:5432/nakama"
+
+session:
+  token_expiry_sec: 3600
+  refresh_token_expiry_sec: 604800
+
+metrics:
+  prometheus_enabled: false
+
+chat:
+  max_message_size_bytes: 32768
+
+match:
+  max_player_distance: 100.0
+
+gateway:
+  cors:
+    allowed_origins:
+      - "*"
+    allowed_methods:
+      - "GET"
+      - "POST"
+      - "PUT"
+      - "DELETE"
+      - "OPTIONS"
+    allowed_headers:
+      - "Content-Type"
+      - "Authorization"
+      - "X-Nakama-Expected-updateTime"
+      - "Cache-Control"
+      - "Keep-Alive"
+      - "User-Agent"
+      - "X-Requested-With"
+      - "If-Modified-Since"
+      - "If-None-Match"
+    max_age: 86400

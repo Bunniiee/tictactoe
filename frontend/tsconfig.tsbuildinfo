@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/components/board.tsx","./src/components/timer.tsx","./src/context/gamecontext.tsx","./src/lib/nakama.ts","./src/pages/gamepage.tsx","./src/pages/homepage.tsx","./src/pages/leaderboardpage.tsx","./src/pages/matchmakingpage.tsx"],"version":"5.9.3"}
