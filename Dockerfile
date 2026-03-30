@@ -1,4 +1,4 @@
-FROM ghcr.io/heroiclabs/nakama:3.25.0
+FROM heroiclabs/nakama:3.25.0
 
 COPY backend/data/modules/index.js /nakama/data/modules/index.js
 COPY nakama.yml /nakama/data/nakama.yml
