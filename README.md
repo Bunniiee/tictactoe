@@ -4,7 +4,7 @@ A real-time multiplayer Tic-Tac-Toe game with a server-authoritative architectur
 
 ## 🔗 Live Demo
 
-**[Play here →](https://your-app.up.railway.app)**
+**[Play here →](https://marvelous-bravery-production-03da.up.railway.app)**
 
 ---
 
