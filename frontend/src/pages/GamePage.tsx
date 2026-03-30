@@ -1,6 +1,6 @@
 import { useEffect, useState, useCallback, useRef } from 'react'
 import { useParams, useNavigate, useLocation } from 'react-router-dom'
-import { useGame, TicTacToeState } from '../context/GameContext'
+import { useGame, TicTacToeState, useSSL } from '../context/GameContext'
 import Board from '../components/Board'
 import Timer from '../components/Timer'
 
@@ -82,7 +82,7 @@ export default function GamePage() {
     const connect = async () => {
       try {
         setConnectionStatus('connecting')
-        const socket = existingSocket || client.createSocket()
+        const socket = existingSocket || client.createSocket(useSSL)
         socketRef.current = socket
 
         socket.onmatchdata = (result: any) => {

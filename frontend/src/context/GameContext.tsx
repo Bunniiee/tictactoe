@@ -60,7 +60,7 @@ interface GameContextValue {
 const GameContext = createContext<GameContextValue | null>(null)
 
 const serverUrl = NAKAMA_SERVER_URL.replace(/\/$/, '').replace('http://', '').replace('https://', '').replace(/:.*$/, '')
-const useSSL = NAKAMA_SERVER_URL.startsWith('https')
+export const useSSL = NAKAMA_SERVER_URL.startsWith('https')
 const port = useSSL ? '443' : '7350'
 const client = new Client('defaultkey', serverUrl, port, useSSL)
 
@@ -108,7 +108,7 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
       sessionStorage.setItem('ttt_user_id', sess.user_id || '')
 
       if (!socketRef.current) {
-        socketRef.current = client.createSocket()
+        socketRef.current = client.createSocket(useSSL)
         socketRef.current.onerror = () => setConnectionStatus('error')
         socketRef.current.onclose = () => {
           socketRef.current = null
